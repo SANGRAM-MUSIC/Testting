@@ -174,11 +174,7 @@ async def pause_admin(cli, message: Message, _, chat_id):
     await message.reply_text(
               f"{reply.from_user.mention} {(random.choice(GALI))}"
           )
-      else:
-        message.reply(
-            f"**🍁REPLY ANY PERSON MESSAGE🍁**"
-        )
-
+      
         
 
 

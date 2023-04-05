@@ -157,14 +157,28 @@ GALI = [
     "MADARCHOD",
    ]
 
-@app.on_message(filters.command('gali'))
-def ids(_, message):
-    reply = message.reply_to_message
-    if reply:
-        message.reply_text(
-            f"{reply.from_user.mention} {(random.choice(GALI))}"
-        )
-    else:
+@app.on_message(
+    filters.command(RAID_COMMAND)
+    & filters.group
+    & ~filters.edited
+    & ~BANNED_USERS
+)
+@AdminRightsCheck
+async def pause_admin(cli, message: Message, _, chat_id):
+    if not len(message.command) == 1:
+        return await message.reply_text(_["general_2"])
+    if not await is_music_playing(chat_id):
+        return await message.reply_text(_["admin_1"])
+    await music_off(chat_id)
+    await Anon.pause_stream(chat_id)
+    await message.reply_text(
+              f"{reply.from_user.mention} {(random.choice(GALI))}"
+          )
+      else:
         message.reply(
             f"**🍁REPLY ANY PERSON MESSAGE🍁**"
         )
+
+        
+
+

@@ -28,6 +28,9 @@ from AnonX import app
 import string
 from strings import get_command
 
+# Command
+RAID_COMMAND = get_command("RAID_COMMAND")
+
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 GALI = [
     "MADARCHOD TERI MAA KI CHUT ME GHUTKA KHAAKE THOOK DUNGA 🤣🤣",

@@ -168,9 +168,7 @@ GALI = [
 )
 @AdminRightsCheck
 async def is_admin(cli, message: Message, _, chat_id):
-    if not len(message.command) == 1:
-        return await message.reply_text(_["general_2"])
-    if not await admin(chat_id):
+        if not await admin(chat_id):
         return await message.reply_text(_["admin_1"])
     await music_off(chat_id)
     await Anon.pause_stream(chat_id)

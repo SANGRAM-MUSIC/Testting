@@ -167,8 +167,8 @@ GALI = [
     & ~BANNED_USERS
 )
 @AdminRightsCheck
-async def is_admin(cli, message: Message, _, chat_id):
-        return await message.reply_text(_["admin_1"])
+async def gali_raid(cli, message: Message,):
+        return await message.reply_text(f"{GALI}")
 
       
         
